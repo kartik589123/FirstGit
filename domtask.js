@@ -77,29 +77,69 @@ h.style.borderBottom = "solid 5px #000";
 // var h1 = document.querySelector("header h1");
 // newdiv.style.fontSize="30px"
 // container.insertBefore(newdiv, h1);
-var itemslist = document.querySelector("#items");
-itemslist.parentElement.style.backgroundColor = "grey";
+// var itemslist = document.querySelector("#items");
+// itemslist.parentElement.style.backgroundColor = "grey";
 
-itemslist.firstChild;
-itemslist.firstElementChild.textContent = "HELLO";
-itemslist.lastChild.textContent = "Hello";
-itemslist.lastElementChild.textContent = "HELLO";
+// itemslist.firstChild;
+// itemslist.firstElementChild.textContent = "HELLO";
+// itemslist.lastChild.textContent = "Hello";
+// itemslist.lastElementChild.textContent = "HELLO";
 
-itemslist.nextSibling.textContent = "8050";
-itemslist.nextElementSibling.textContent = "1234";
+// itemslist.nextSibling.textContent = "8050";
+// itemslist.nextElementSibling.textContent = "1234";
 
-itemslist.previousSibling;
-itemslist.previousElementSibling.style.color = "red";
+// itemslist.previousSibling;
+// itemslist.previousElementSibling.style.color = "red";
 
-var newdiv = document.createElement("div");
+// var newdiv = document.createElement("div");
 
-newdiv.className = "hello";
-newdiv.setAttribute = ("title", "hello div");
+// newdiv.className = "hello";
+// newdiv.setAttribute = ("title", "hello div");
 
-var newdivtext = document.createTextNode("hello world");
-newdiv.appendChild(newdivtext);
+// var newdivtext = document.createTextNode("hello world");
+// newdiv.appendChild(newdivtext);
 
-var container = document.querySelector("header .container");
-var h1 = document.querySelector("header h1");
-newdiv.style.fontSize = "30px";
-container.insertBefore(newdiv, h1);
+// var container = document.querySelector("header .container");
+// var h1 = document.querySelector("header h1");
+// newdiv.style.fontSize = "30px";
+// container.insertBefore(newdiv, h1);
+var form = document.getElementById("addForm");
+var itemlist = document.getElementById("items");
+
+form.addEventListener("submit", addItem);
+
+itemlist.addEventListener("click", removeitem);
+
+function addItem(e) {
+  e.preventDefault();
+
+  var newitem = document.getElementById("item").value;
+
+  var li = document.createElement("li");
+
+  li.className = "list-group-item";
+
+  li.appendChild(document.createTextNode(newitem));
+
+  var deletebtn = document.createElement("button");
+  deletebtn.className = "btn btn-danger btn-sm float-right delete";
+
+  deletebtn.appendChild(document.createTextNode("X"));
+
+  var editbtn = document.createElement("button");
+  editbtn.className = "btn btn-danger btn-sm float-right delete";
+  editbtn.appendChild(document.createTextNode("edit"));
+
+  li.appendChild(deletebtn);
+  li.appendChild(editbtn);
+  itemlist.appendChild(li);
+}
+
+function removeitem(e) {
+  if (e.target.classList.contains("delete")) {
+    if (confirm("are you sure?")) {
+      var li = e.target.parentElement;
+      itemlist.removeChild(li);
+    }
+  }
+}
