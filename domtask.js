@@ -29,12 +29,24 @@ h.style.borderBottom = "solid 5px #000";
 //   item.style.fontWeight = "bold";
 // }
 
-var li = document.getElementsByTagName("li");
+// var li = document.getElementsByTagName("li");
 
-console.log((li[0].textContent = "hello"));
+// console.log((li[0].textContent = "hello"));
 
-li[2].style.backgroundColor = "green";
+// li[2].style.backgroundColor = "green";
 
-for (item of li) {
-  item.style.fontWeight = "bold";
+// for (item of li) {
+//   item.style.fontWeight = "bold";
+// }
+var query = document.querySelectorAll("li");
+query[1].style.color = "green";
+
+var queryodd = document.querySelectorAll("li:nth-child(odd");
+for (item of queryodd) {
+  item.style.backgroundColor = "green";
 }
+
+var query = document.querySelectorAll("li");
+
+query[1].style.backgroundColor = "green";
+query[2].style.display = "none";
