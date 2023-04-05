@@ -38,15 +38,68 @@ h.style.borderBottom = "solid 5px #000";
 // for (item of li) {
 //   item.style.fontWeight = "bold";
 // }
-var query = document.querySelectorAll("li");
-query[1].style.color = "green";
+// var query = document.querySelectorAll("li");
+// query[1].style.color = "green";
 
-var queryodd = document.querySelectorAll("li:nth-child(odd");
-for (item of queryodd) {
-  item.style.backgroundColor = "green";
-}
+// var queryodd = document.querySelectorAll("li:nth-child(odd");
+// for (item of queryodd) {
+//   item.style.backgroundColor = "green";
+// }
 
-var query = document.querySelectorAll("li");
+// var query = document.querySelectorAll("li");
 
-query[1].style.backgroundColor = "green";
-query[2].style.display = "none";
+// query[1].style.backgroundColor = "green";
+// query[2].style.display = "none";
+
+// var itemslist = document.querySelector("#items");
+// itemslist.parentElement.style.backgroundColor = "grey";
+
+// itemslist.firstChild;
+// itemslist.firstElementChild.textContent = "HELLO";
+// itemslist.lastChild.textContent = "Hello";
+// itemslist.lastElementChild.textContent = "HELLO";
+
+// itemslist.nextSibling.textContent = "8050";
+// itemslist.nextElementSibling.textContent = "1234";
+
+// itemslist.previousSibling;
+// itemslist.previousElementSibling.style.color = "red";
+
+// var newdiv = document.createElement("div");
+
+// newdiv.className = "hello";
+// newdiv.setAttribute = ("title", "hello div");
+
+// var newdivtext = document.createTextNode("hello world");
+// newdiv.appendChild(newdivtext);
+
+// var container = document.querySelector("header .container");
+// var h1 = document.querySelector("header h1");
+// newdiv.style.fontSize="30px"
+// container.insertBefore(newdiv, h1);
+var itemslist = document.querySelector("#items");
+itemslist.parentElement.style.backgroundColor = "grey";
+
+itemslist.firstChild;
+itemslist.firstElementChild.textContent = "HELLO";
+itemslist.lastChild.textContent = "Hello";
+itemslist.lastElementChild.textContent = "HELLO";
+
+itemslist.nextSibling.textContent = "8050";
+itemslist.nextElementSibling.textContent = "1234";
+
+itemslist.previousSibling;
+itemslist.previousElementSibling.style.color = "red";
+
+var newdiv = document.createElement("div");
+
+newdiv.className = "hello";
+newdiv.setAttribute = ("title", "hello div");
+
+var newdivtext = document.createTextNode("hello world");
+newdiv.appendChild(newdivtext);
+
+var container = document.querySelector("header .container");
+var h1 = document.querySelector("header h1");
+newdiv.style.fontSize = "30px";
+container.insertBefore(newdiv, h1);
