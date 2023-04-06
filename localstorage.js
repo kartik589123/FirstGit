@@ -1,10 +1,14 @@
-const myform = document.querySelector("#my-form");
-const nameinput = document.querySelector("#name");
-
 myform.addEventListener("submit", onsubmit);
 
 function onsubmit(e) {
   e.preventDefault();
-  localStorage.setItem("Name", document.getElementById("name").value);
-  localStorage.setItem("Email", document.getElementById("email").value);
+
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+
+  const obj = {
+    name: name,
+    email: email,
+  };
+  localStorage.setItem("userdetails", JSON.stringify(obj));
 }
