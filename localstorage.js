@@ -1,5 +1,3 @@
-myform.addEventListener("submit", onsubmit);
-
 function onsubmit(e) {
   e.preventDefault();
 
@@ -10,5 +8,5 @@ function onsubmit(e) {
     name: name,
     email: email,
   };
-  localStorage.setItem("userdetails", JSON.stringify(obj));
+  localStorage.setItem(JSON.stringify(obj.email), JSON.stringify(obj));
 }
