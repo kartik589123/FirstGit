@@ -13,11 +13,25 @@ if (localStorage.length !== 0) {
     const btn = document.createElement("button");
     btn.innerHTML = "Delete";
     li.appendChild(btn);
+    const edit = document.createElement("button");
+    edit.innerHTML = "Edit";
+    li.append(edit);
+
     userlist.appendChild(li);
 
     btn.addEventListener("click", (e) => {
       localStorage.removeItem(JSON.stringify(prevEmail));
       btn.parentElement.remove();
+    });
+
+    edit.addEventListener("click", (e) => {
+      localStorage.removeItem(
+        JSON.stringify(edit.previousSibling.previousSibling.innerHTML)
+      );
+      nameinput.value = edit.previousSibling.previousSibling.innerHTML;
+      emailinput.value =
+        edit.previousSibling.previousSibling.previousSibling.innerHTML;
+      edit.parentElement.remove();
     });
   }
 }
@@ -37,14 +51,31 @@ function onsubmit(e) {
 
   const li = document.createElement("li");
   li.innerHTML = `<span>${nameinput.value}</span><span>${emailinput.value}</span>`;
+
   const btn = document.createElement("button");
-  btn.innerHTML = "delete";
+  btn.innerHTML = "Delete";
   li.appendChild(btn);
+
+  const edit = document.createElement("button");
+  edit.innerHTML = "Edit";
+  li.append(edit);
+
   userlist.appendChild(li);
 
   btn.addEventListener("click", (e) => {
     localStorage.removeItem(JSON.stringify(btn.previousSibling.innerHTML));
     btn.parentElement.remove();
+  });
+
+  edit.addEventListener("click", (e) => {
+    localStorage.removeItem(
+      JSON.stringify(edit.previousSibling.previousSibling.innerHTML)
+    );
+
+    nameinput.value = edit.previousSibling.previousSibling.innerHTML;
+    emailinput.value =
+      edit.previousSibling.previousSibling.previousSibling.innerHTML;
+    edit.parentElement.remove();
   });
 
   nameinput.value = "";
