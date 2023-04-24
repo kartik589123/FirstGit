@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST</title>
+    <style>
+      .space {
+        margin-right: 10px;
+      }
+      .rs {
+        font-size: 22px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <form id="form">
+        Selling Price:
+        <input class="space" type="number" id="sp" />
+        Product Name:
+        <input class="space" type="text" id="pn" />
+        <button class="space" type="submit">Add Product</button>
+      </form>
+      <h1>Products</h1>
+      <ul id="users"></ul>
+      <br /><br />
+      <h2>
+        Total Value of Products:<span class="rs">Rs.</span
+        ><span class="rs" id="sum"></span>
+      </h2>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="rest.js"></script>
+  </body>
+</html>
