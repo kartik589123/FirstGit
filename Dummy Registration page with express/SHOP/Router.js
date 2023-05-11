@@ -4,6 +4,8 @@ const path = require("path");
 
 const app = express();
 
+const errorcontroller = require("../Controllers/error");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const AdminRoutes = require("./Admin");
@@ -26,9 +28,6 @@ app.use(contactus);
 
 app.use(successs);
 
-app.use((req, res, next) => {
-  console.log("hey");
-  res.status(404).sendFile(path.join(__dirname, "../", "views", "404.html")); //__dirname, "../", "views", "404.html")
-});
+app.use(errorcontroller.get404page);
 
 app.listen(4000, () => console.log("server 4000 is running"));
