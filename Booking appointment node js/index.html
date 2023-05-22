@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking App</title>
+  </head>
+  <style>
+    .space {
+      margin-right: 40px;
+    }
+  </style>
+  <body>
+    <header>
+      <form action="/" method="post" id="form">
+        <label for="name">username</label>
+        <input type="text" name="username" id="username" />
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+        <label for="phone">Phone no</label>
+        <input type="number" name="phone" id="phone" />
+        <button type="submit">Submit</button>
+      </form>
+      <ul id="ul"></ul>
+    </header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
